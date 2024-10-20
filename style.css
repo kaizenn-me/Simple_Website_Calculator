@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: #f2f2f2;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, #f0f0f0, #d4d4d4);
+    display: grid;
+    place-items: center;
+}
+
+#calculator {
+    background: #2c2a3d;
+    height: 90vh;
+    width: 90vw;
+    max-height: 800px;
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+#display {
+    height: 25%;
+    background: #1f1d29;
+    min-height: 165px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: #ffffff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0px -5px 10px rgba(0, 0, 0, 0.2);
+}
+
+#secEntry {
+    font-size: 1.2em;
+    color: #b3a4ff;
+    opacity: 0.8;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#primEntry {
+    font-size: 2.5em;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#controls {
+    height: 75%;
+    display: grid;
+    grid-template-areas:
+        "H H H V"
+        "1 2 3 V"
+        "4 5 6 V"
+        "7 8 9 V"
+        ". 0 . V";
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    place-items: center;
+    padding: 20px;
+    gap: 10px;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+#highlightHR {
+    grid-area: H;
+    background-color: #f0f0f0;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+#highlightVR {
+    grid-area: V;
+    background-color: #f0f0f0;
+    width: 80%;
+    height: 100%;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btns {
+    background-color: #3c3a4d;
+    height: 65px;
+    width: 65px;
+    border-radius: 15px;
+    display: grid;
+    place-items: center;
+    font-size: 1.5em;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btns:active {
+    transform: scale(0.95);
+    box-shadow: none;
+}
+
+.operators {
+    background-color: #ff6b6b;
+    color: white;
+}
+
+.operators:active {
+    background-color: #ff4747;
+}
+
+#AC, #DEL, .parentheses {
+    background-color: #f0f0f0;
+    color: #2c2a3d;
+}
+
+#SBMT {
+    background-color: #9176ff;
+    height: 75px;
+    width: 75px;
+    font-size: 2em;
+    color: white;
+    border-radius: 20px;
+}
+
+#SBMT:active {
+    background-color: #6d50e3;
+}
